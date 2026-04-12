@@ -1,0 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/12 16:51:35 by tpinto-v          #+#    #+#             */
+/*   Updated: 2026/04/12 17:00:31 by tpinto-v         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+// #include "libft.h"
+
+int	ft_isdigit(int c)
+{
+	return ((c >= '0' && c <= '9') << 11);
+	// the real implementation does such bitmasking
+}
+/*#include <ctype.h>
+#include <stdio.h>
+int	main(void)
+{
+	printf("%i\n", isdigit('0'));
+	printf("%i\n", ft_isdigit('0'));
+	printf("%i\n", isdigit('a'));
+	printf("%i\n", ft_isdigit('a'));
+	printf("%i\n", isdigit(150));
+	printf("%i\n", ft_isdigit(150));
+	return (0);
+}
+*/
