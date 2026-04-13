@@ -6,7 +6,7 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/12 16:38:20 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/12 17:42:57 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/13 21:02:53 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,21 @@
 
 int	ft_isalnum(int c)
 {
-	return ((ft_isalpha(c) || ft_isdigit(c)) << 3);
+	return (ft_isalpha(c) || ft_isdigit(c));
 	// the real implementation does such bitmasking
 }
-/*
-#include <ctype.h>
+/*#include <ctype.h>
 #include <stdio.h>
 int	main(void)
 {
 	printf("%i\n", isalnum(239));
-	printf("%i\n", ft_isalnum(239));
+	//printf("%i\n", ft_isalnum(239));
 	printf("%i\n", isalnum('a'));
-	printf("%i\n", ft_isalnum('a'));
+	//printf("%i\n", ft_isalnum('a'));
 	printf("%i\n", isalnum('1'));
-	printf("%i\n", ft_isalnum('1'));
+	//printf("%i\n", ft_isalnum('1'));
 	printf("%i\n", isalnum('9'));
-	printf("%i\n", ft_isalnum('9'));
+	//printf("%i\n", ft_isalnum('9'));
 	return (0);
 }
 */
