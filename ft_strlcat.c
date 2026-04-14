@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/13 22:16:38 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/13 22:32:35 by tpinto-v         ###   ########.fr       */
+/*   Created: 2026/04/14 15:05:03 by tpinto-v          #+#    #+#             */
+/*   Updated: 2026/04/14 17:17:59 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//#include "libft.h"
 #include <stddef.h>
-size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
+size_t	ft_strlen(const char *str)
 {
-	while(dsize-- && *src != '\0')
-		*(dst++) = *(src++);
-	*dst = '\0';
-	return(ft_strlen(src));
+	size_t	len;
+	while (str[len])
+		len++;
+	return (len);
 }
+
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
+{
+	
+}
+
+#include <bsd/string.h>
 #include <stdio.h>
 int	main(void)
 {
-	char	*src = "hello";
-	char	dst[4];
-	printf("%i %s", ft_strlcpy(dst, src, 4), dst);
+	char	dest1[50] = "hello";
+	char	src1[30] = "world";
+	char	dest2[50] = "hello";
+	char	src2[30] = "world";
+
+	printf("%zu %s", strlcat(dest1, src1, 6), dest1);
+	printf("%zu %s", ft_strlcat(dest2, src2, 6), dest2);
 }
-	

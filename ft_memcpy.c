@@ -6,27 +6,27 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/11 21:42:22 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/12 15:01:14 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/13 12:09:13 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdlib.h>
+#include "libft.h"
+
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t i;
-	
+	size_t	i;
+
 	i = 0;
 	if (src == NULL && dest == NULL)
 		return (NULL);
 	while (i < n)
 	{
-		((unsigned char*) dest)[i] = ((unsigned char*) src)[i];
+		((unsigned char *) dest)[i] = ((unsigned char *) src)[i];
 		i++;
 	}
 	return (dest);
 }
-
+/*
 #include <string.h>
 #include <stdio.h>
 int	main(void)
@@ -46,3 +46,4 @@ int	main(void)
 	ft_memcpy(&b, &a, sizeof(int));
 	printf("%d\n", b);
 }
+*/

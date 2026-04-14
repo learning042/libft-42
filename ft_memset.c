@@ -6,19 +6,19 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/11 16:32:56 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/11 18:52:58 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/13 12:11:58 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t	i;
-	unsigned char	*str;
+
 	i = 0;
 	str = s;
 	while (i < n)
 	{
-		str[i] = (unsigned char) c;
+		((unsigned char) s)[i] = (unsigned char) c;
 		i++;
 	}
 	return (s);
@@ -52,5 +52,4 @@ int	main(void)
 	ft_memset(arr, 155, sizeof(arr)); 
 	printf("ft_memset %d\n", arr[0]);
 	return (0);
-	}*/
-		
+}*/

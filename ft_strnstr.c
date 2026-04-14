@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/13 21:05:14 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/13 21:26:51 by tpinto-v         ###   ########.fr       */
+/*   Created: 2026/04/14 19:25:31 by tpinto-v          #+#    #+#             */
+/*   Updated: 2026/04/14 19:38:00 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memmove(void *dest, const void *src, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t				i;
-	unsigned char		*d;
-	const unsigned char	*src;
-
-	d = 
-	/*
-		let's say it overlaps
-					  dest[0]
-		|src[0]|src[1]|src[2]|...|src[n - 1]|
-
-		then it will copy src[0] to dest[0], src[1] to dest[1] ...
-
-		example dest = src + 2, n = 10 and char src[50] = "hello world";
-		then after copying, src = "hehello worl"
-	*/
+	if (little[0] == '\0')
+		return (big);
+	while (*big)
+	{
+		if (ft_strncmp(big, little, len) == 0)
+			return (little);
+		++big;
+	}
+	return (NULL);
+}

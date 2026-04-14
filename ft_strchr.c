@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/13 22:16:38 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/14 18:03:01 by tpinto-v         ###   ########.fr       */
+/*   Created: 2026/04/14 17:25:27 by tpinto-v          #+#    #+#             */
+/*   Updated: 2026/04/14 17:42:30 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	len_src;
 	size_t	i;
 
-	len_src = ft_strlen(src);
 	i = 0;
-	if (dsize > 0)
+	while (s[i] != '\0')
 	{
-		while (i < dsize && src[i] != '\0')
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
+		if (s[i] == c)
+			return ((char *) s + i);
+		++i;
 	}
-	return (len_src);
+	if (c == '\0')
+		return ((char *) s + i);
+	return (NULL);
 }
 /*
 #include <stdio.h>
 int	main(void)
 {
-	char	*src = "hello";
-	char	dst[4];
-	printf("%i %s", ft_strlcpy(dst, src, 4), dst);
+	const char	s[] = "hello";
+	printf("%p\n", s);
+	printf("%p\n", ft_strchr(s, '\0'));
 }
-*/	
+*/

@@ -6,7 +6,7 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/12 16:27:06 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/12 16:36:57 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/13 11:57:11 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@ int	ft_isascii(int c)
 {
 	return (c >= 0 && c <= 127);
 }
+/*
 #include <ctype.h>
 #include <stdio.h>
 int	main(void)
@@ -26,3 +27,4 @@ int	main(void)
 	printf("%i\n", ft_isascii(50));
 	return (0);
 }
+*/

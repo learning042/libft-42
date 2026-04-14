@@ -6,7 +6,7 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/12 15:50:36 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/12 17:05:10 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/13 11:58:28 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 int	ft_isprint(int c)
 {
-	return ((c >= 32 && c <= 126) << 14);
-	// the real implementation does such bitmasking
+	return (c >= 32 && c <= 126);
 }
 /*
 #include <ctype.h>

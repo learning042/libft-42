@@ -6,13 +6,13 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 21:05:14 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/13 22:12:40 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/14 18:05:02 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char		*d;
 	const unsigned char	*s;
@@ -26,7 +26,7 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 	}
 	else
 	{
-		while(n--)
+		while (n--)
 		{
 			d += n - 1;
 			s += n - 1;

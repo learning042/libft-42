@@ -6,18 +6,18 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/11 22:51:03 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/11 23:08:14 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/13 12:17:46 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {
-	int	i;
+	int		i;
+	char	*s_cpy;
 
-	i = 0;
-	char	*s_cpy = (char *) malloc(ft_strlen(s) + 1);
+	s_cpy = (char *) malloc(ft_strlen(s) + 1);
 	if (s_cpy == NULL)
 		return (NULL);
 	ft_strcpy(s_cpy, s);

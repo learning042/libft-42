@@ -6,18 +6,18 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/12 16:51:35 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/13 21:03:52 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/13 11:57:51 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// #include "libft.h"
 
 int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
-	// the real implementation does such bitmasking
 }
-/*#include <ctype.h>
+/*
+#include <ctype.h>
 #include <stdio.h>
 int	main(void)
 {

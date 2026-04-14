@@ -6,7 +6,7 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 23:01:27 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/13 23:44:30 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/14 19:44:31 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	ft_atoi(const char *nptr)
 
 	number = 0;
 	sign = 1;
-	if (*nptr == ' ' || *nptr == '\t' || *nptr == '\f' || *nptr == '\r' ||
-		*nptr == '\n' || *nptr == '\v')
+	if (*nptr == ' ' || *nptr == '\t' || *nptr == '\f' || *nptr == '\r'
+		|| *nptr == '\n' || *nptr == '\v')
 		nptr++;
 	if (*nptr == '+' || *nptr == '-')
 	{

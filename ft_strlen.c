@@ -6,11 +6,12 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/11 22:38:52 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/11 22:49:11 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/13 12:09:51 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
+
 size_t	ft_strlen(const char *s)
 {
 	size_t	len;

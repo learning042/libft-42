@@ -1,42 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/13 22:16:38 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/14 18:03:01 by tpinto-v         ###   ########.fr       */
+/*   Created: 2026/04/14 18:46:59 by tpinto-v          #+#    #+#             */
+/*   Updated: 2026/04/14 19:23:45 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	len_src;
-	size_t	i;
+	unsigned char	*s1_cpy;
+	unsigned char	*s2_cpy;
 
-	len_src = ft_strlen(src);
-	i = 0;
-	if (dsize > 0)
+	s1_cpy = (unsigned char *) s1;
+	s2_cpy = (unsigned char *) s2;
+	while (n--)
 	{
-		while (i < dsize && src[i] != '\0')
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
+		if (*s1_cpy != *s2_cpy)
+			return (*s1_cpy - *s2_cpy);
+		++s1_cpy;
+		++s2_cpy;
 	}
-	return (len_src);
+	return (0);
 }
 /*
 #include <stdio.h>
 int	main(void)
 {
-	char	*src = "hello";
-	char	dst[4];
-	printf("%i %s", ft_strlcpy(dst, src, 4), dst);
+	char	s1[100] = "hello";
+	char	s2[21] = "hello";
+
+	printf("%i\n", ft_memcmp(s1, s2, 5));
+	printf("%i\n", ft_memcmp(s1, s2, 21));
+	printf("%i\n", ft_memcmp(s1, s2, 90));
+	
+	return (0);
 }
-*/	
+*/
