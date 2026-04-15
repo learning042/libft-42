@@ -1,39 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/12 00:30:27 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/12 00:34:12 by tpinto-v         ###   ########.fr       */
+/*   Created: 2026/04/15 12:23:53 by tpinto-v          #+#    #+#             */
+/*   Updated: 2026/04/15 13:08:11 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	size_t	len_s;
 	size_t	i;
-	size_t	j;
+	char	*sub;
+	
 
 	i = 0;
-	j = ft_strlen(s1);
-	while (s2[i] != '\0')
+	len_s = ft_strlen(s);
+	if (start > len_s)
+		return (NULL);
+	sub = malloc(len + 1);
+	if (sub == NULL)
+		return (NULL);
+	while (s[i + start] != '\0' && i < len)
 	{
-		s1[i + j] = s2[i];
+		sub[i] = s[i + start];
 		i++;
 	}
-	s1[i + j] = '\0';
-	return (s1);
+	sub[i] = '\0';
+	return (sub);
 }
-/*#include <stdio.h>
+/*
+#include <stdio.h>
 int	main(void)
 {
-	const char	*s2 = " world";
-	char	s1[12] = "hello";
-	ft_strcat(s1, s2);
-	printf("%s\n", s1);
+	const char *s = "hello";
+	char		*sub;
+	sub = ft_substr(s, 3, 2);
+	printf("%s\n", sub);
 	return (0);
 }
 */

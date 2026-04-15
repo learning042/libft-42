@@ -1,39 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/12 00:30:27 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/12 00:34:12 by tpinto-v         ###   ########.fr       */
+/*   Created: 2026/04/15 14:23:44 by tpinto-v          #+#    #+#             */
+/*   Updated: 2026/04/15 14:58:28 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strcat(char *s1, const char *s2)
+size_t	ft_coudtwords (char const *str)
 {
-	size_t	i;
-	size_t	j;
+	size_t	words_count;
 
-	i = 0;
-	j = ft_strlen(s1);
-	while (s2[i] != '\0')
-	{
-		s1[i + j] = s2[i];
-		i++;
-	}
-	s1[i + j] = '\0';
-	return (s1);
-}
-/*#include <stdio.h>
-int	main(void)
+	words_count = 0;
+	if (
+char	**ft_split(char const *s, char c)
 {
-	const char	*s2 = " world";
-	char	s1[12] = "hello";
-	ft_strcat(s1, s2);
-	printf("%s\n", s1);
-	return (0);
-}
-*/
+	char	**strings;
+
+	strings = malloc(
