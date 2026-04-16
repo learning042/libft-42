@@ -6,7 +6,7 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/11 23:11:06 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/15 21:09:04 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/16 12:57:01 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 char	*ft_strcpy(char *dst, const char *src)
 {
 	size_t	i;
-	size_t	j;
 
 	i = 0;
 	while (src[i] != '\0')
