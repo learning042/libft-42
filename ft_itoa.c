@@ -6,11 +6,13 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 13:01:13 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/16 13:26:27 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/16 15:38:17 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_count_digits(int	num)
+#include "libft.h"
+
+static long	ft_count_digits(long num)
 {
 	if (num < 0)
 		num *= -1;
@@ -18,13 +20,12 @@ int		ft_count_digits(int	num)
 		return (1);
 	return (1 + ft_count_digits(num / 10));
 }
-#include <stdlib.h>
 
-char	*ft_itoa(int n)
+static char	*ft_itoa_long(long n)
 {
-	char	*num;
-	int		mem_alloc;
-	int		sign;
+	char		*num;
+	long		mem_alloc;
+	long		sign;
 
 	sign = 1;
 	mem_alloc = ft_count_digits(n) + 1;
@@ -47,14 +48,24 @@ char	*ft_itoa(int n)
 		num[0] = '-';
 	return (num);
 }
-/*		
+
+char	*ft_itoa(int n)
+{
+	return (ft_itoa_long(n));
+}
+/*
 #include <stdio.h>
 int	main(void)
 {
-	int		n = -5005;
+	int		n = -2147483648;
+	int		n1 = 42;
 	char	*num = ft_itoa(n);
 	printf("%s\n", num);
 	free(num);
+	
+	char	*num1 = ft_itoa(n1);
+	printf("%s\n", num1);
+	free(num1);
 	return (0);
 }
 */

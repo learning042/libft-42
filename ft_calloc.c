@@ -6,15 +6,17 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 23:03:16 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/15 00:05:41 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/16 15:43:26 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// if n * m > size_max. For getting the size_max of the type size_t
-// we just need to cast the -1 for size_t, because size_t can't be negative, so it will
-// go up to size_max. So, we have n > (size_t) -1 / m
+/* 
+if n * m > size_max. For getting the size_max of the type size_t
+ we just need to cast the -1 for size_t, because size_t can't be 
+negative, so it will go up to size_max. So, we have n > (size_t) -1 / m
+*/
 static int	ft_multip_overflow(size_t n, size_t m)
 {
 	if (m == 0)
@@ -34,6 +36,7 @@ void	*ft_calloc(size_t n, size_t size)
 	ft_memset(ptr, 0, n * size);
 	return (ptr);
 }
+/*
 #include <stdio.h>
 int	main(void)
 {
@@ -45,3 +48,4 @@ int	main(void)
 	free(arr);
 	return (0);
 }
+*/

@@ -6,7 +6,7 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 12:23:53 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/15 13:08:11 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/16 15:40:59 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	len_s;
 	size_t	i;
-	char	*sub;
-	
+	char	*sub;	
 
 	i = 0;
 	len_s = ft_strlen(s);

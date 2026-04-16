@@ -6,11 +6,25 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/11 22:51:03 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/13 12:17:46 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/16 16:14:29 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static char	*ft_strcpy(char *dst, const char *src)
+{
+	size_t	i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
+}
 
 char	*ft_strdup(const char *s)
 {

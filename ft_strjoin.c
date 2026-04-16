@@ -6,11 +6,27 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 13:08:37 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/15 14:08:10 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/16 16:13:05 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static char	*ft_strcat(char *s1, const char *s2)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = ft_strlen(s1);
+	while (s2[i] != '\0')
+	{
+		s1[i + j] = s2[i];
+		i++;
+	}
+	s1[i + j] = '\0';
+	return (s1);
+}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -23,6 +39,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strcat(s_conc, s2);
 	return (s_conc);
 }
+/*
 #include <stdio.h>
 int	main(void)
 {
@@ -32,3 +49,4 @@ int	main(void)
 	printf("%s\n", s3);
 	return (0);
 }
+*/
