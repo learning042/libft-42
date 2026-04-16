@@ -6,33 +6,33 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/11 23:11:06 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/12 14:56:44 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/15 21:09:04 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+char	*ft_strcpy(char *dst, const char *src)
 {
 	size_t	i;
 	size_t	j;
 
 	i = 0;
-	j = ft_strlen(s1);
-	while (s2[i] != '\0')
+	while (src[i] != '\0')
 	{
-		s1[i + j] = s2[i];
+		dst[i] = src[i];
 		i++;
 	}
-	s1[i + j] = '\0';
-	return (s1);
+	dst[i] = '\0';
+	return (dst);
 }
-/*#include <stdio.h>
+/*
+#include <stdio.h>
 int	main(void)
 {
-	const char	*s2 = " world";
-	char	s1[12] = "hello";
-	ft_strcat(s1, s2);
+	const char	*s2 = "hello";
+	char	s1[20];
+	ft_strcpy(s1, s2);
 	printf("%s\n", s1);
 	return (0);
 }
