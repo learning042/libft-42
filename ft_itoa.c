@@ -6,7 +6,7 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 13:01:13 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/16 15:38:17 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/16 20:56:57 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,13 @@ static char	*ft_itoa_long(long n)
 
 char	*ft_itoa(int n)
 {
-	return (ft_itoa_long(n));
+	return (ft_itoa_long((long) n));
 }
 /*
 #include <stdio.h>
 int	main(void)
 {
-	int		n = -2147483648;
+	int		n = 2147483648;
 	int		n1 = 42;
 	char	*num = ft_itoa(n);
 	printf("%s\n", num);
