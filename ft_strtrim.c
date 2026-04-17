@@ -6,7 +6,7 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 21:09:43 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/16 13:00:38 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/17 12:29:39 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ static int	in_set(char c, char const *set)
 
 /*
   The function cut/trim the values from the left and then from the right of it
-  which are in the *set* string and then dynamically allocates memory to store a trimmed copy
-  of the string. The return value is the pointer to the first char of in the
-  trimmed string and NULL if the allocation fails.
+  which are in the *set* string and then dynamically allocates memory to store 
+  a trimmed copy of the string. The return value is the pointer to the first char
+  of in the trimmed string and NULL if the allocation fails.
 */
 
 char	*ft_strtrim(char const *s1, char const *set)

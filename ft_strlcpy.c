@@ -6,11 +6,10 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 22:16:38 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/14 18:03:01 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/17 12:53:27 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
@@ -20,9 +19,9 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 	len_src = ft_strlen(src);
 	i = 0;
-	if (dsize > 0)
+	if (size > 0)
 	{
-		while (i < dsize && src[i] != '\0')
+		while (i < size && src[i] != '\0')
 		{
 			dst[i] = src[i];
 			i++;

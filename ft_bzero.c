@@ -6,11 +6,11 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/11 16:43:46 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/13 12:02:13 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/17 12:49:08 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

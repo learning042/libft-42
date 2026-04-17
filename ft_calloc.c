@@ -6,7 +6,7 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 23:03:16 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/16 15:43:26 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/17 18:02:50 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,16 @@ static int	ft_multip_overflow(size_t n, size_t m)
 	return (n > (size_t) -1 / m);
 }
 
-void	*ft_calloc(size_t n, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	if (ft_multip_overflow(n, size))
+	if (ft_multip_overflow(nmemb, size))
 		return (NULL);
-	ptr = malloc(n * size);
+	ptr = malloc(nmemb * size);
 	if (ptr == NULL)
 		return (NULL);
-	ft_memset(ptr, 0, n * size);
+	ft_memset(ptr, 0, nmemb * size);
 	return (ptr);
 }
 /*
