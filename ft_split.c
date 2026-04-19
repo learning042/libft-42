@@ -6,7 +6,7 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 14:23:44 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/19 15:17:01 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/19 17:15:18 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ char	**ft_split(char const *s, char c)
 	strings[word_count] = NULL;
 	return (strings);
 }
-
+/*
 #include <stdio.h>
 int	main(void)
 {
@@ -108,3 +108,4 @@ int	main(void)
 	char	*str = NULL;
 	char	**array2 = ft_split(str, ',');
 }
+*/
