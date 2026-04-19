@@ -6,7 +6,7 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/11 16:43:46 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/17 12:49:08 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/19 20:05:07 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,10 @@ void	ft_bzero(void *s, size_t n)
 {
 	size_t		i;
 
-	str = s;
 	i = 0;
 	while (i < n)
 	{
-		(unsigned char str)[i] = '\0';
+		((unsigned char *) s)[i] = '\0';
 		i++;
 	}
 }

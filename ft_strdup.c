@@ -6,7 +6,7 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/11 22:51:03 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/16 16:14:29 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/19 20:05:37 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ static char	*ft_strcpy(char *dst, const char *src)
 
 char	*ft_strdup(const char *s)
 {
-	int		i;
 	char	*s_cpy;
 
 	s_cpy = (char *) malloc(ft_strlen(s) + 1);

@@ -6,7 +6,7 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 13:01:13 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/16 20:56:57 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/19 21:57:49 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,26 +25,24 @@ static char	*ft_itoa_long(long n)
 {
 	char		*num;
 	long		mem_alloc;
-	long		sign;
+	long		isneg;
 
-	sign = 1;
-	mem_alloc = ft_count_digits(n) + 1;
-	if (n < 0)
-	{
-		++mem_alloc;
-		sign = -1;
-		n *= -1;
-	}
+	isneg = (n < 0);
+	mem_alloc = ft_count_digits(n) + 1 + isneg;
 	num = malloc(mem_alloc);
 	if (num == NULL)
 		return (NULL);
-	num[mem_alloc] = '\0';
+	num[mem_alloc - 1] = '\0';
+	if (n == 0)
+		num[0] = '0';
+	if (n < 0)
+		n *= -1;
 	while (mem_alloc-- && n != 0)
 	{
 		num[mem_alloc - 1] = n % 10 + '0';
 		n /= 10;
 	}
-	if (sign == -1)
+	if (isneg)
 		num[0] = '-';
 	return (num);
 }

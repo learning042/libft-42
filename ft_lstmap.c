@@ -6,7 +6,7 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/19 12:43:40 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/19 17:06:30 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/19 21:45:23 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new;
 	t_list	*newlst;
 	void	*map;
-	
+
 	if (lst == NULL)
 		return (NULL);
 	new = NULL;
@@ -36,7 +36,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (newlst);
 }
-
 /*
 void *ft_test1(void *c)
 {

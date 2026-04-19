@@ -6,7 +6,7 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 12:23:53 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/16 15:40:59 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/19 21:20:04 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,10 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	len_s;
 	size_t	i;
 	char	*sub;	
 
 	i = 0;
-	len_s = ft_strlen(s);
-	if (start > len_s)
-		return (NULL);
 	sub = malloc(len + 1);
 	if (sub == NULL)
 		return (NULL);

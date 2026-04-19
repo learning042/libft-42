@@ -6,19 +6,17 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 14:23:44 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/19 17:15:18 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/19 21:48:23 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_countwords (char const *str, char sep)
+static size_t	ft_countwords(char const *str, char sep)
 {
 	size_t	word_count;
 
 	word_count = 0;
-	if (!str)
-		return (-1);
 	while (*str)
 	{
 		while (*str == sep)
@@ -72,22 +70,22 @@ char	**ft_split(char const *s, char c)
 {
 	char	**strings;
 	size_t	word_count;
-	
+
 	word_count = 0;
-	if (ft_countwords(s, c) == -1)
-		return (NULL);
 	strings = malloc((ft_countwords(s, c) + 1) * sizeof(char *));
 	if (strings == NULL)
 		return (NULL);
 	while (*s)
 	{
+		while (*s == c)
+			++s;
+		if (!*s)
+			break ;
 		strings[word_count] = my_strdup(s, c);
 		if (strings[word_count] == NULL)
 			return (ft_free_everything(strings, word_count), NULL);
-		word_count++;
+		++word_count;
 		s += my_strlen(s, c);
-		while (*s == c)
-			++s;
 	}
 	strings[word_count] = NULL;
 	return (strings);

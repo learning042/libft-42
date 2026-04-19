@@ -6,7 +6,7 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 15:05:03 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/16 16:19:26 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/19 21:36:18 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dsize = ft_strlen(dst) + 1;
 	ssize = ft_strlen(src) + 1;
 	dsize_cpy = dsize;
-	if (dsize >= size)
+	if (dsize > size)
 		return (size + ssize - 1);
 	while (dsize_cpy < size && i < ssize - 1)
 	{
