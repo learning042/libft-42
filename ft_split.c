@@ -6,7 +6,7 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 14:23:44 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/15 17:57:10 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/19 15:17:01 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,20 @@
 static size_t	ft_countwords (char const *str, char sep)
 {
 	size_t	word_count;
-	int		inword;
 
-	inword = 1;
 	word_count = 0;
+	if (!str)
+		return (-1);
 	while (*str)
 	{
-		if (inword == 1 && *str != sep)
+		while (*str == sep)
+			++str;
+		if (*str)
 		{
 			++word_count;
-			while (*str != sep && *str != '\0')
+			while (*str && *str != sep)
 				++str;
-			if (*str == '\0')
-				return (word_count);
-			inword = 0;
 		}
-		inword = 1;
-		++str;
 	}
 	return (word_count);
 }
@@ -46,59 +43,68 @@ static size_t	my_strlen(const char *s, char term)
 	return (len);
 }
 
-static char	*my_strcpy(char *s1, const char *s2, char term)
-{
-	size_t	i;
-
-	i = 0;
-	while (s2[i] != '\0' && s2[i] != term)
-	{
-		s1[i] = s2[i];
-		++i;
-	}
-	s1[i] = '\0';
-	return (s1)
-}
-
-char	*my_strdup(const char *s, char term)
+static char	*my_strdup(const char *s, char term)
 {
 	int		i;
 	char	*s_cpy;
 
+	i = 0;
 	s_cpy = (char *) malloc(my_strlen(s, term) + 1);
 	if (s_cpy == NULL)
 		return (NULL);
-	my_strcpy(s_cpy, s);
+	while (s[i] != '\0' && s[i] != term)
+	{
+		s_cpy[i] = s[i];
+		i++;
+	}
+	s_cpy[i] = '\0';
 	return (s_cpy);
+}
+
+static void	ft_free_everything(char **arr, size_t size)
+{
+	while (size--)
+		free(arr[size]);
+	free(arr);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**strings;
-	size_t	word_amount;
-	size_t	s_location;
 	size_t	word_count;
-
-	s_location = 0;
+	
 	word_count = 0;
-	word_amount = ft_countwords(s, c);
-	strings = malloc(word_amount + 1);
+	if (ft_countwords(s, c) == -1)
+		return (NULL);
+	strings = malloc((ft_countwords(s, c) + 1) * sizeof(char *));
 	if (strings == NULL)
 		return (NULL);
-	while (i < word_amount)
+	while (*s)
 	{
-		if (s[i] != c)
-		{
-			while ()
-		}
+		strings[word_count] = my_strdup(s, c);
+		if (strings[word_count] == NULL)
+			return (ft_free_everything(strings, word_count), NULL);
+		word_count++;
+		s += my_strlen(s, c);
+		while (*s == c)
+			++s;
 	}
+	strings[word_count] = NULL;
+	return (strings);
 }
 
 #include <stdio.h>
 int	main(void)
 {
-	char const	*str = " hl lor ";
-	char		sep = ' ';
-	printf("%zu\n", ft_countwords(str, sep));
-	return (0);
+	char		**array = ft_split("aaa,,bbb", ',');
+	int			i = 0;
+	while (array[i] != NULL)
+	{
+		printf("%s\n", array[i]);
+		free(array[i]);
+		++i;
+	}
+	free(array);
+	char	*str = NULL;
+	char	**array2 = ft_split(str, ',');
 }

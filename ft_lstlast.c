@@ -6,7 +6,7 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 21:20:21 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/17 22:53:47 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/19 17:10:21 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ t_list	*ft_lstlast(t_list *lst)
 	t_list	*tmp;
 
 	tmp = lst;
+	if (lst == NULL)
+		return (NULL);
 	while (tmp->next != NULL)
 		tmp = tmp->next;
 	return (tmp);

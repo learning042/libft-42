@@ -6,7 +6,7 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 22:36:10 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/17 23:22:34 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/19 16:37:17 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*tmp;
 
+	if (new == NULL)
+		return ;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
 	tmp = *lst;
 	while (tmp->next != NULL)
 		tmp = tmp->next;
