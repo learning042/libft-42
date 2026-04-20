@@ -6,11 +6,12 @@
 #    By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/19 19:40:22 by tpinto-v          #+#    #+#              #
-#    Updated: 2026/04/19 20:14:58 by tpinto-v         ###   ########.fr        #
+#    Updated: 2026/04/20 17:54:28 by tpinto-v         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 NAME = libft.a
-SRCS = ft_isalpha.c \
+
+SRCS =	ft_isalpha.c \
 		ft_isdigit.c \
 		ft_isalnum.c \
 		ft_isascii.c \
@@ -27,6 +28,9 @@ SRCS = ft_isalpha.c \
 		ft_strchr.c \
 		ft_strrchr.c \
 		ft_strncmp.c \
+		ft_memchr.c \
+		ft_memcmp.c \
+		ft_strnstr.c \
 		ft_atoi.c \
 		ft_calloc.c \
 		ft_strdup.c \
@@ -50,8 +54,11 @@ SRCS = ft_isalpha.c \
 		ft_lstclear.c \
 		ft_lstiter.c \
 		ft_lstmap.c
+
 OBJS = $(SRCS:.c=.o)
+
 CC = cc
+
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME) clean
@@ -64,8 +71,10 @@ $(OBJS): %.o: %.c
 
 clean:
 	rm -f $(OBJS)
+
 fclean: clean
 	rm -f $(NAME)
+
 re: fclean $(NAME)
 
 .PHONY: all clean fclean re

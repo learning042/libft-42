@@ -6,7 +6,7 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 17:43:23 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/14 18:01:39 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/20 16:56:30 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strrchr(const char *s, int c)
 	last_occurrence = NULL;
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == (char) c)
 			last_occurrence = (char *) s;
 		s++;
 	}
-	if (c == '\0')
+	if ((char) c == '\0')
 		return ((char *) s);
 	return (last_occurrence);
 }
@@ -31,9 +31,9 @@ char	*ft_strrchr(const char *s, int c)
 #include <stdio.h>
 int	main(void)
 {
-	char	*s = "hello";
+	char	*s = "teste";
 	printf("%p\n", s);
-	printf("%p\n", ft_strrchr(s, 'l'));
+	printf("%p\n", ft_strrchr(s, '\0'));
 	return (0);
 }
 */

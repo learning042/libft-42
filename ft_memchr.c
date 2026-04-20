@@ -6,7 +6,7 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 18:23:11 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/19 21:38:39 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/20 17:01:19 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (s2[i] == c)
+		if (s2[i] == (unsigned char) c)
 			return ((void *)(s2 + i));
 		++i;
 	}

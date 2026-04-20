@@ -6,7 +6,7 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 19:25:31 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/17 13:14:20 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/20 17:46:25 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	if (little[0] == '\0')
+	size_t	len_little;
+
+	len_little = ft_strlen(little);
+	if (!len_little)
 		return ((char *) big);
-	while (*big)
+	while (len-- >= len_little && *big)
 	{
-		if (ft_strncmp(big, little, len) == 0)
+		if (!ft_strncmp(big, little, len_little))
 			return ((char *) big);
 		++big;
 	}
@@ -28,9 +31,12 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 #include <stdio.h>
 int	main(void)
 {
-	const char	*big = "hello world";
-	const char	*little = " world";
-	printf("%p\n", big);
-	printf("%p\n", ft_strnstr(big, little, ft_strlen(big)));
+	const char	*largestring = "Foo Bar	Baz";
+	const char	*smallstring = "Bar";
+	char *ptr;
+
+	ptr = ft_strnstr(largestring, smallstring, 5);
+	printf("%p\n", ptr);
 	return (0);
-}*/
+}
+*/
