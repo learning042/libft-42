@@ -6,7 +6,7 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/11 21:14:50 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/19 20:09:19 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/20 22:21:01 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,6 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-// check character and character manipulation
-// string manipulation
-// memory manipulation
-// type conversion functions
-// file descriptor functions
-// linked lists
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);

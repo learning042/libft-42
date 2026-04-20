@@ -61,7 +61,7 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-all: $(NAME) clean
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
