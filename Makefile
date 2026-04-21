@@ -6,7 +6,7 @@
 #    By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/19 19:40:22 by tpinto-v          #+#    #+#              #
-#    Updated: 2026/04/20 17:54:28 by tpinto-v         ###   ########.fr        #
+#    Updated: 2026/04/21 15:55:51 by tpinto-v         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 NAME = libft.a
@@ -66,8 +66,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-$(OBJS): %.o: %.c
-	$(CC) $(CFLAGS) -c $^ -o $@
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
