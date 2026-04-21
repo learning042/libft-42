@@ -6,7 +6,7 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 19:25:31 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/20 17:46:25 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/21 17:49:03 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	len_little = ft_strlen(little);
 	if (!len_little)
 		return ((char *) big);
-	while (len-- >= len_little && *big)
+	while (*big && len-- >= len_little)
 	{
 		if (!ft_strncmp(big, little, len_little))
 			return ((char *) big);

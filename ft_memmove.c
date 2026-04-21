@@ -6,7 +6,7 @@
 /*   By: tpinto-v <tpinto-v@student.42lisb...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 21:05:14 by tpinto-v          #+#    #+#             */
-/*   Updated: 2026/04/19 20:49:39 by tpinto-v         ###   ########.fr       */
+/*   Updated: 2026/04/21 17:51:47 by tpinto-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	d = dest;
 	s = src;
+	if (src == dest)
+		return (dest);
 	if (d < s)
 	{
 		while (n--)
