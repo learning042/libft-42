@@ -51,6 +51,7 @@ Functions | Description | Category
 `void   *ft_calloc(size_t nmemb, size_t size);` | Dynamically allocates memory for an array of **nmemb** elements of **size bytes** each and returns a pointer to the allocated memory. The memory is set to zero. If the multiplication of **nmem** and **size** is zero, then `ft_calloc` will return a unique pointer that can later be successfully passed to `free()`. This implementation handles overflow of the multiplication of **nmemb** and **size** by returning `NULL` in such case. | libc
 
 4. Type conversion functions
+
 Functions | Description | Category
 --|--|--
 `int    ft_atoi(const char *nptr)` | Converts the string pointerd to by nptr to an int. It stops to convert when find a char that is not a digit char(described in `ft_isdigit`). If the string starts with whitespaces described in `isspace(3)`(links in the **Resources** section) it will skip until find a digit or a sign char (`'+'` or `'-'`). If it finds a sign char it will just consider one instance, if it has another after, it will pause as it was a non-digit char. | libc
