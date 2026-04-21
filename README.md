@@ -1,117 +1,119 @@
 _This project has been created as part of the 42 curriculum by tpinto-v._
 
 # Description
-Libft is a C library which contains some reimplementations of Standard C library's (libc) functions and also some extra functions. 
+
+Libft is a C library containing reimplementations of Standard C library (libc) functions, along with some additional utility functions.
 
 ## Functions in the library
 
-1. Functions that check characters and character manipulation
+### 1. Character checks and manipulation
 
-It is interesting to know that the implementation from libc can have some bitshiffiting/bitmasking. I let some resource about it in **Resources** section.
+> **Note:** libc implementations of some of these functions may use bit-shifting and bit-masking internally. See the **Resources** section for more.
 
-Functions | Description | Category
---|--|--
-`int	ft_isalpha(int c);` | Checks for alphabetic character. | libc
-`int    ft_isdigit(int c);`  | Checks for a digit character('0' through '9'). | libc
-`int    ft_isalnum(int c);` | Checks for an alphanumeric character. | libc
-`int    ft_isascii(int c);` | Checks if the value fits into the ASCII character set. | libc
-`int    ft_isprint(int c);` | Checks for any printable character. | libc
-`int    ft_toupper(int c); ` | Convert lowercase letter into uppercase. | libc
-`int    ft_tolower(int c);` | Convert uppercase letter into lowercase. | libc
+| Function | Description | Category |
+|--|--|--|
+| `int ft_isalpha(int c);` | Checks for an alphabetic character. | libc |
+| `int ft_isdigit(int c);` | Checks for a digit character (`'0'` through `'9'`). | libc |
+| `int ft_isalnum(int c);` | Checks for an alphanumeric character. | libc |
+| `int ft_isascii(int c);` | Checks whether the value fits within the ASCII character set. | libc |
+| `int ft_isprint(int c);` | Checks for any printable character. | libc |
+| `int ft_toupper(int c);` | Converts a lowercase letter to uppercase. | libc |
+| `int ft_tolower(int c);` | Converts an uppercase letter to lowercase. | libc |
 
-2. String manipulation
+### 2. String manipulation
 
-Functions | Description | Category
---|--|--
-`size_t ft_strlen(const char *s);` | Calculates the length of the string(memory that string occupy excluding the null terminator `'\0'`). | libc
-`size_t ft_strlcpy(char *dst, const char *src, size_t size);` | Copies the source string(pointed by **src**) into a destination string( pointed by **dst**) which is limited by size. If the destination buffer isn't large enough to hold the copy, the resulting string will be truncated and null terminated. The return value is the length of the total string that it was tried to create(in this case, the length of src).  | libc
-`size_t ft_strlcat(char *dst, const char *src, size_t size);` | Similar to `ft_strlcpy` but it concatenates the source into the destination, instead of copying. | libc
-`char   *ft_strchr(const char *s, int c)` | Returns a pointer(the address) of the first occurrence of the character `c` (i.e., it does some type casting to a 1-byte char for checking in the function) in the string s. **Note**: The null terminator character is considered part of the string, so that if `c` is equal to `\0`, the function will return a pointer to the terminator.| libc
-`char   *ft_strrchr(const char *s, int c)` | Similar to `ft_strchr` but it returns a pointer to the last occurrence. | libc
-`int    ft_strncmp(const char *s1, const char *s2, size_t n);` | It compares the content(not the address) of the first **n bytes** of two strings `s1` and `s2`, the comparison is done with **unsigned characters**.| libc
-`char *ft_strnstr(const char *big, const char *little, size_t len);` | Locates the first occurence of the string pointed by **little** in the string pointed by **big**, where not more than **len** characters are searched. | libc
-`char   *ft_strdup(const char *s);` | It returns a pointer to the duplicated of the **s** string. The new string is obtained by dynamic allocation with `malloc(3)`, and can be freed with `free(3)`. | libc
-`char   *ft_substr(char const *s, unsigned int start, size_t len)` | Allocates memory (using malloc(3)) and returns a substring from the string pointer by **s**. The substring starts at index **start** and has a maximum length of **len**. If the start is greater than the **length** of the string(so, it would be an index after the memory area of the string) it will allocates an empty string and if the **len** is greater than the possible size that the substring can have(i.e., **length of s** - **start**), the function will correct it an only give the possible substring you could have. The return value is the pointer that points to the substring. | extra
-`char   *ft_strjoin(char const *s1, char const *s2);` | Allocates memory (using malloc(3)) and returns a new string, which is the result of concatenating **s1** and **s2**.  | extra
-`char   *ft_strtrim(char const *s1, char const *set);` | The function cut/trim the values from the left and then from the right of it which are in the *set* string and then dynamically allocates memory(malloc(3)) to store a trimmed copy of the string. The return value is the pointer to the first char of in the trimmed string and NULL if the allocation fails. | extra
-`char   **ft_split(char const *s, char c);` | Allocates memory (using malloc(3)) and returns an array of strings obtained by splitting **s** using the character **c** as a delimiter. Each string in the returned array is allocated independently. The array of pointers itself is also allocated dynamically. The returned array must be NULL terminated | extra 
-`char   *ft_strmapi(char const *s, char (*f)(unsigned int, char));` | Applies the function **f** to each character of the string pointed by **s**, passing its  index as the first argument and the character itself as the second. A new string is created (using malloc(3)) to store the results from the successive applications of **f**. It returns the allocated string. | extra
-`void   ft_striteri(char *s, void (*f)(unsigned int, char*);` | Same of `ft_striteri` but the string pointed by **s**, the data of the mapping is not passed to another string as before(that's why a pointer to a char (`char *s`) instead of a pointer to a constant char (`char const *s`)). | extra
+| Function | Description | Category |
+|--|--|--|
+| `size_t ft_strlen(const char *s);` | Returns the length of the string, excluding the null terminator `'\0'`. | libc |
+| `size_t ft_strlcpy(char *dst, const char *src, size_t size);` | Copies the string pointed to by `src` into the buffer pointed to by `dst`, limited by `size`. If the buffer is too small, the result is truncated and null-terminated. Returns the length of `src`. | libc |
+| `size_t ft_strlcat(char *dst, const char *src, size_t size);` | Like `ft_strlcpy`, but concatenates `src` onto the end of `dst` instead of copying. Returns the total length of the string it attempted to create (i.e., the initial length of `dst` plus the length of `src`). | libc |
+| `char *ft_strchr(const char *s, int c);` | Returns a pointer to the first occurrence of character `c` in string `s`. The null terminator is considered part of the string, so passing `'\0'` returns a pointer to the end of the string. | libc |
+| `char *ft_strrchr(const char *s, int c);` | Like `ft_strchr`, but returns a pointer to the last occurrence of `c`. | libc |
+| `int ft_strncmp(const char *s1, const char *s2, size_t n);` | Compares the first `n` bytes of strings `s1` and `s2` using unsigned character comparison. | libc |
+| `char *ft_strnstr(const char *big, const char *little, size_t len);` | Locates the first occurrence of the string `little` within `big`, searching at most `len` characters. | libc |
+| `char *ft_strdup(const char *s);` | Returns a pointer to a newly allocated duplicate of the string `s`. The memory is obtained via `malloc(3)` and can be released with `free(3)`. | libc |
+| `char *ft_substr(char const *s, unsigned int start, size_t len);` | Allocates and returns a substring of `s` starting at index `start` with a maximum length of `len`. If `start` is beyond the end of `s`, an empty string is returned. If `len` exceeds the available characters from `start`, it is clamped to what is available. Returns a pointer to the substring. | extra |
+| `char *ft_strjoin(char const *s1, char const *s2);` | Allocates and returns a new string that is the concatenation of `s1` and `s2`. | extra |
+| `char *ft_strtrim(char const *s1, char const *set);` | Allocates and returns a copy of `s1` with all leading characters (left side) and then all trailing characters (right side) that appear in `set` removed. Returns `NULL` if the allocation fails. | extra |
+| `char **ft_split(char const *s, char c);` | Allocates and returns an array of strings obtained by splitting `s` on the delimiter character `c`. Each substring is independently allocated. The array is null-terminated. | extra |
+| `char *ft_strmapi(char const *s, char (*f)(unsigned int, char));` | Applies `f` to each character of `s`, passing the character's index and the character itself. Returns a newly allocated string built from the results. | extra |
+| `void ft_striteri(char *s, void (*f)(unsigned int, char*));` | Like `ft_strmapi`, but modifies `s` in place rather than producing a new string. The function receives a pointer to each character, allowing in-place modification. | extra |
 
-3. Memory manipulation
+### 3. Memory manipulation
 
-Functions | Description | Category
---|--|--
-`void   *ft_memset(void *s, int c, size_t n);` | It fills the first **n bytes** of the memory area pointer to by **s** with the constant byte **c** (i.e., **c** is converted to unsigned char). | libc
-`void    ft_bzero(void *s, size_t n);` | It does the same of `ft_memset` but it just erases the data in the **n bytes** by writting `'\0'` to each byte in the area. | libc
-`void   *ft_memcpy(void *dest, const void *src, size_t n);` | Copies **n bytes** from memory area **src** to memory area **dest**. The memory areas must not overlap, if it does overlap you will end up overwritting the content of the src and not copying appropriately(you will copy things that were already overwritten). | libc
-`void   *ft_memmove(void *dest, const void *src, size_t n);` | Similar to `ft_memcpy` but it deals with overlapping memory areas by copying from the end of the area to the beginning in such cases, or in libc implementation, copying the bytes in **src** to a temporary array that does not overlap **src** or **dest** and then copying these bytes to **dest**. | libc
-`void   *ft_memchr(const void *s, int c, size_t n);` | Searches into the initial **n bytes** of the memory area pointer to by **s** for the first instance of **c**. Both **c** and the bytes of the memory area are interpreted as **unsigned char**. | libc
-`int    ft_memcmp(const void *s1, const void *s2, size_t n);` | Compares the first **n bytes**(interpreted as **unsigned char**) of the memory areas **s1** and **s2**. | libc
-`void   *ft_calloc(size_t nmemb, size_t size);` | Dynamically allocates memory for an array of **nmemb** elements of **size bytes** each and returns a pointer to the allocated memory. The memory is set to zero. If the multiplication of **nmem** and **size** is zero, then `ft_calloc` will return a unique pointer that can later be successfully passed to `free()`. This implementation handles overflow of the multiplication of **nmemb** and **size** by returning `NULL` in such case. | libc
+| Function | Description | Category |
+|--|--|--|
+| `void *ft_memset(void *s, int c, size_t n);` | Fills the first `n` bytes of the memory area pointed to by `s` with the byte value `c` (cast to `unsigned char`). | libc |
+| `void ft_bzero(void *s, size_t n);` | Erases `n` bytes starting at `s` by writing `'\0'` to each byte. | libc |
+| `void *ft_memcpy(void *dest, const void *src, size_t n);` | Copies `n` bytes from memory area `src` to memory area `dest`. The areas must not overlap — if they do, bytes in `src` may be overwritten before being read, corrupting the copy. | libc |
+| `void *ft_memmove(void *dest, const void *src, size_t n);` | Like `ft_memcpy`, but handles overlapping memory regions safely — either by copying from back to front, or (as in the libc implementation) by first copying `src` into a temporary buffer that doesn't overlap either area, then copying to `dest`. | libc |
+| `void *ft_memchr(const void *s, int c, size_t n);` | Searches the first `n` bytes of `s` for the first occurrence of `c`. Both `c` and the bytes of `s` are interpreted as `unsigned char`. | libc |
+| `int ft_memcmp(const void *s1, const void *s2, size_t n);` | Compares the first `n` bytes of `s1` and `s2`, interpreted as `unsigned char`. | libc |
+| `void *ft_calloc(size_t nmemb, size_t size);` | Allocates memory for an array of `nmemb` elements of `size` bytes each, initialised to zero. If `nmemb * size` is zero, returns a unique pointer that can still be passed to `free()`. Returns `NULL` on overflow of `nmemb * size`. | libc |
 
-4. Type conversion functions
+### 4. Type conversion
 
-Functions | Description | Category
---|--|--
-`int    ft_atoi(const char *nptr)` | Converts the string pointerd to by nptr to an int. It stops to convert when find a char that is not a digit char(described in `ft_isdigit`). If the string starts with whitespaces described in `isspace(3)`(links in the **Resources** section) it will skip until find a digit or a sign char (`'+'` or `'-'`). If it finds a sign char it will just consider one instance, if it has another after, it will pause as it was a non-digit char. | libc
-`char   *ft_itoa(int n);` | The reverse of `ft_atoi`. Converts an integer **n** to a string, it dynamically allocates memory by using `malloc(3)` for it. | extra
+| Function | Description | Category |
+|--|--|--|
+| `int ft_atoi(const char *nptr);` | Converts the string pointed to by `nptr` to an `int`. Leading whitespace (as defined by `isspace(3)`) is skipped. An optional leading `'+'` or `'-'` sign is accepted; a second sign character stops conversion. Conversion stops at the first non-digit character. | libc |
+| `char *ft_itoa(int n);` | The inverse of `ft_atoi`. Converts the integer `n` to a newly allocated string. | extra |
 
-5. File descriptor functions
+### 5. File descriptor output
 
-Functions | Description | Category
---|--|--
-`char   ft_putchar_fd(char c, int fd);` | Writes(produce output of) the character **c** to the specified file descriptor **fd**. | extra
-`void   ft_putstr_fd(char *s, int fd);` | Writes the string pointer by **s** to the specified file descriptor **fd**. | extra
-`void   ft_putendl_fd(char *s, int fd);` | Same of `ft_putstr_fd` but it display a newline right after the string. | extra
-`void   ft_putnbr_fd(int n, int fd);` | Writes the integer **n** to the specified file descriptor **fd**. | extra
+| Function | Description | Category |
+|--|--|--|
+| `void ft_putchar_fd(char c, int fd);` | Writes character `c` to the file descriptor `fd`. | extra |
+| `void ft_putstr_fd(char *s, int fd);` | Writes the string `s` to the file descriptor `fd`. | extra |
+| `void ft_putendl_fd(char *s, int fd);` | Writes the string `s` followed by a newline to the file descriptor `fd`. | extra |
+| `void ft_putnbr_fd(int n, int fd);` | Writes the integer `n` to the file descriptor `fd`. | extra |
 
-6. Linked lists
+### 6. Linked lists
 
-These functions use the list in the form of a struct **t_list** described below in its type-definition: 
+These functions operate on the `t_list` struct defined as follows:
 
-`typedef struct s_list {
-    void    *content;
-    struct s_list   *new;
-}   t_list;`
+```c
+typedef struct s_list {
+    void            *content;
+    struct s_list   *next;
+} t_list;
+```
 
-Functions | Description | Category
---|--|--
-`t_list *ft_lstnew(void *content);` | Allocates memory (using malloc(3)) and returns a new node. The **content** member variable is initialized with the given parameter **content**. The member variable **next** is initialized to **NULL**. | extra
-`void   ft_lstadd_front(t_list **lst, t_list *new);`  | Adds the node **new** at the beginning of the list, where **lst** is a pointer to the pointer that points to the first node. | extra
-`int    ft_lstsize(t_list *lst);` | Counts the number of nodes in the list. Where **lst** is a pointer to the first node of the list. | extra
-`t_list *ft_lstlast(t_list *lst);` | Returns the address of the last node of the list. Where **lst** is a pointer to the first node of the list. | extra
-`void   ft_lstadd_back(t_list **lst, t_list *new)` | Similar to the `ft_lstadd_front` but it adds a new node to the end of the list instead of the beginning. | extra
-`void   ft_lstdelone(t_list *lst, void (*del)(void *));` | Takes the address **lst** of a node as parameter and frees its content using the function **del**. Free the node itself(with free(3)) but does **NOT** free the next node. | extra 
-`void   ft_lstclear(t_list **lst, void (*del)(void *));` | Deletes and frees the given node and all its successors, using the function **del** and free(3). Finally, set the pointer to the list to NULL. | extra
-`void   ft_lstiter(t_list *lst, void (*f)(void *))` | Iterates through the list **lst**(**lst** is the pointer to the first node of the list) and applies the function ’f’ to the content of each node. | extra
-`t_list   *ft_lstmap(t_list *lst, void (*f)(void *), void (*del)(void *));` | Iterates through the list **lst**(**lst** is the pointer to the first node of the list), applies the function **f** to each node’s content, and creates a new list resulting of the successive applications of the function **f**. The **del** function is used to delete the content of a node if needed. | extra
+| Function | Description | Category |
+|--|--|--|
+| `t_list *ft_lstnew(void *content);` | Allocates and returns a new node. `content` is set to the given parameter and `next` is initialised to `NULL`. | extra |
+| `void ft_lstadd_front(t_list **lst, t_list *new);` | Adds the node `new` at the beginning of the list. `lst` is a pointer to the pointer to the first node. | extra |
+| `int ft_lstsize(t_list *lst);` | Returns the number of nodes in the list. | extra |
+| `t_list *ft_lstlast(t_list *lst);` | Returns the last node of the list. | extra |
+| `void ft_lstadd_back(t_list **lst, t_list *new);` | Adds the node `new` at the end of the list. | extra |
+| `void ft_lstdelone(t_list *lst, void (*del)(void *));` | Frees the content of `lst` using `del`, then frees the node itself. Does **not** free subsequent nodes. | extra |
+| `void ft_lstclear(t_list **lst, void (*del)(void *));` | Deletes and frees the given node and all following nodes using `del` and `free(3)`. Sets the list pointer to `NULL`. | extra |
+| `void ft_lstiter(t_list *lst, void (*f)(void *));` | Iterates through the list (where `lst` points to the first node) and applies `f` to the content of each node. | extra |
+| `t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));` | Iterates through the list (where `lst` points to the first node), applies `f` to each node's content, and builds a new list from the results. If a node allocation fails, `del` is used to free already-created content before returning `NULL`. | extra |
 
-
-# Instructions 
+---
 
 ## Makefile
 
-Commands | Side-effect
---|--
-`make` `make all` | Compile all the object files and then archive them into the library libft.a (i.e., build the library)
-`make clean` | Remove all the object files
-`make fclean` | Remove the library libft.a and all the object files
-`make re` | Rebuild the library (i.e., run `clean` and then `all`)
+| Command | Effect |
+|--|--|
+| `make` / `make all` | Compile all object files and archive them into `libft.a` |
+| `make clean` | Remove all object files |
+| `make fclean` | Remove `libft.a` and all object files |
+| `make re` | Rebuild the library (`fclean` then `all`) |
 
-## How to use the library ?
+## Usage
 
-1. Use `make` in order to build the library as specified previously.
-2. Don't forget to have a `.c` file with a `main() function`.
-3. Include libft header by doing `#include "libft.h"` into your `.c` file.
-4. Compile the `.c` by using `cc [name of the .c file] -I[path where the libft.h is] -L[path where the libft.a is] -lft`
-5. Execute the executable by doing `./a.out`.
+1. Run `make` to build the library.
+2. Create a `.c` file with a `main()` function.
+3. Add `#include "libft.h"` at the top of your file.
+4. Compile with: `cc <file.c> -I<path/to/libft.h> -L<path/to/libft.a> -lft`
+5. Run the resulting executable: `./a.out`
 
-# Resources
+---
 
-Some helpful resources about the libc functions:
+## Resources
 
-- The documentation for each function can be accessed via the terminal using man [function_name] (e.g., man strcmp), or through the [FreeBSD man pages](https://man.freebsd.org/cgi/man.cgi) (which are sometimes more detailed and better explained).
-- The [Geekforgeeks](https://www.geeksforgeeks.org) website has many tutorials for learning C, other programming languages and many other computing topics.
-- [Cs50x](https://cs50.harvard.edu/x/), a course for learning many C and programming concepts.
-- [isspace(3)](https://man.openbsd.org/isspace.3)
+- Function documentation is available via `man <function_name>` in the terminal, or through the [FreeBSD man pages](https://man.freebsd.org/cgi/man.cgi).
+- [GeeksforGeeks](https://www.geeksforgeeks.org) — tutorials for C and other programming topics.
+- [CS50x](https://cs50.harvard.edu/x/) — introductory course covering C and programming fundamentals.
+- [isspace(3)](https://man.openbsd.org/isspace.3) — OpenBSD manual page for `isspace`.
