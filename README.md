@@ -39,6 +39,7 @@ Functions | Description | Category
 `void   ft_striteri(char *s, void (*f)(unsigned int, char*);` | Same of `ft_striteri` but the string pointed by **s**, the data of the mapping is not passed to another string as before(that's why a pointer to a char (`char *s`) instead of a pointer to a constant char (`char const *s`)). | extra
 
 3. Memory manipulation
+
 Functions | Description | Category
 --|--|--
 `void   *ft_memset(void *s, int c, size_t n);` | It fills the first **n bytes** of the memory area pointer to by **s** with the constant byte **c** (i.e., **c** is converted to unsigned char). | libc
@@ -56,6 +57,7 @@ Functions | Description | Category
 `char   *ft_itoa(int n);` | The reverse of `ft_atoi`. Converts an integer **n** to a string, it dynamically allocates memory by using `malloc(3)` for it. | extra
 
 5. File descriptor functions
+
 Functions | Description | Category
 --|--|--
 `char   ft_putchar_fd(char c, int fd);` | Writes(produce output of) the character **c** to the specified file descriptor **fd**. | extra
